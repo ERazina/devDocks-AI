@@ -23,3 +23,8 @@ def read_root():
 @app.get("/health")
 def health_check():
     return {"status": "ok"}
+
+@app.post("/chat")
+def chat(request: dict):
+    question = request.get("question")
+    return {"message": f"You asked: {question}"}
